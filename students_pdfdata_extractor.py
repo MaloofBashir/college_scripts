@@ -11,9 +11,9 @@ print(user_name)
 
 def extract_table(table_index,user_name):
 
-    document=Document(r"C:\Users\HP\Downloads\colg.docx")
+    document=Document(r"C:\Users\HP\Downloads\college.docx")
    
-    
+     
     table_data=[]
     table=document.tables[table_index]
     for row in table.rows:
@@ -29,7 +29,7 @@ def extract_table(table_index,user_name):
     for index,row in df.iterrows():
         value=row["Subjects1"]
         if user_name in value:
-            value=df.loc[index,"ClassRollNo"]
+            value=df.loc[index,"Regd. No"]
             if value.isdigit()!=True:
                 print(df.iloc[index])
                 new_count+=1
@@ -37,7 +37,7 @@ def extract_table(table_index,user_name):
             ENG520.append(value)
 
     #print(f"no of missing values are {new_count}")
-for i in range(6):
+for i in range(12):
     extract_table(i,user_name)
 
 print(ENG520)
@@ -45,7 +45,7 @@ print(f"total no of students are {len(ENG520)}")
 count=0
 
     
-with open("newfile.txt",'w') as file:
+with open("roolno.txt",'w') as file:
     for data in ENG520:
         file.write(data+ ",")
 

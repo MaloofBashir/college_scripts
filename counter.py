@@ -1,3 +1,5 @@
-
-mylist=list([201 204 209 212 213 214 219 220 221 222 224 225 226 228 229 230 231 232 301 304 305 307 309 311 312 321 322 323 324 327 328 330 334 337 338 339 345 349 405 407 409 413 428 429 435 436 702 703 705 710 711 714 716 227 329 410])
-print(len(mylist))
+with open("newfile.txt",'r') as file:
+    contents=file.read()
+    values=contents.split(",")
+    for val in values:
+        print(val)
